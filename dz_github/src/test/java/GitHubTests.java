@@ -31,7 +31,18 @@ public class GitHubTests {
     $("a[href='/selenide/selenide/wiki/SoftAssertions']").click();
     sleep(2000);
 
-    
+    //проверяем что есть пример кода для JUnit5
+    $("#wiki-body").shouldHave(text("@ExtendWith({SoftAssertsExtension.class})\n" +
+            "class Tests {\n" +
+            "  @Test\n" +
+            "  void test() {\n" +
+            "    Configuration.assertionMode = SOFT;\n" +
+            "    open(\"page.html\");\n" +
+            "\n" +
+            "    $(\"#first\").should(visible).click();\n" +
+            "    $(\"#second\").should(visible).click();\n" +
+            "  }\n" +
+            "}"));
 
 
 
