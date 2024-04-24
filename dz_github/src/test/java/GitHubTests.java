@@ -26,10 +26,8 @@ public class GitHubTests {
 
     //Проверяем, что есть страница SoftAssertions
     $("[data-filterable-for=wiki-pages-filter]").shouldHave(text("SoftAssertions"));
-    //sleep(2000);
 
     $("a[href='/selenide/selenide/wiki/SoftAssertions']").click();
-    sleep(2000);
 
     //проверяем что есть пример кода для JUnit5
     $("#wiki-body").shouldHave(text("@ExtendWith({SoftAssertsExtension.class})\n" +
